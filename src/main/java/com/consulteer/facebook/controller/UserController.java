@@ -35,14 +35,14 @@ public class UserController {
         return new ResponseEntity<>(optionalUser.get(), HttpStatus.OK);
     }
 
-    @PostMapping("/{userId}/posts")
-    public ResponseEntity<Post> addPost(@PathVariable("userId") Long userId, @RequestBody Post post) {
-        Post result = postService.create(userId, post);
-        if (result != null) {
-            return ResponseEntity.ok(result);
-        }
-        return ResponseEntity.badRequest().build();
-    }
+//    @PostMapping("/{userId}/posts")
+//    public ResponseEntity<Post> addPost(@PathVariable("userId") Long userId, @RequestBody Post post) {
+//        Post result = postService.create(userId, post);
+//        if (result != null) {
+//            return ResponseEntity.ok(result);
+//        }
+//        return ResponseEntity.badRequest().build();
+//    }
 
     @GetMapping(value = "/{userId}/posts", params = {"page", "size", "sort"})
     public ResponseEntity<Page<Post>> findAll(@PathVariable("userId") Long userId, @RequestParam("page") int page,

@@ -25,12 +25,6 @@ public class PostServiceImpl implements PostService {
     @Autowired
     private UserRepository userRepository;
 
-//    @Override
-//    public Post create(Post post) {
-//        post.setTime(LocalDateTime.now());
-//        return postRepository.save(post);
-//    }
-
     @Override
     public int likePost(Post post) {
         int count = post.getCount();
