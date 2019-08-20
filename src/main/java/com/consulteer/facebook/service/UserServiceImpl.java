@@ -1,6 +1,8 @@
 package com.consulteer.facebook.service;
 
 import com.consulteer.facebook.entity.User;
+import com.consulteer.facebook.exceptions.BadRequesException;
+import com.consulteer.facebook.exceptions.NotFoundException;
 import com.consulteer.facebook.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +19,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User create(User input) {
         if (!isValid(input)) {
-            return null;
+            throw new BadRequesException("Bad request");
         }
         String email = input.getEmail();
         User user = userRepository.findUserByEmail(email);
@@ -29,7 +31,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> findOne(Long id) {
-        return userRepository.findById(id);
+        Optional<User> optionalUser = userRepository.findById(id);
+        if(optionalUser.isPresent()){
+            return optionalUser;
+        }
+        throw new NotFoundException("User not found");
     }
 
     @Override

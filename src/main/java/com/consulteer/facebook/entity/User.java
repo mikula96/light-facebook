@@ -1,5 +1,6 @@
 package com.consulteer.facebook.entity;
 
+import com.consulteer.facebook.customAnnotation.IsValid;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public class User {
     private String name;
     private String lastName;
     private LocalDate birthdate;
+    @IsValid
     private String email;
     private String password;
     @OneToMany(mappedBy = "user")
