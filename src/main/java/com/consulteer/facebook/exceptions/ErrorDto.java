@@ -17,5 +17,5 @@ public class ErrorDto {
     private int statusCode;
     private String message;
     private String uri;
-    private Timestamp timestamp;
+    private String timestamp;
 }

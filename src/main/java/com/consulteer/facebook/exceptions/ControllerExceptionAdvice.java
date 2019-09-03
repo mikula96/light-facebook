@@ -23,7 +23,7 @@ public class ControllerExceptionAdvice extends RuntimeException {
         String uri = request.getRequestURI();
         String messages = ex.getMessage();
 
-        ErrorDto response = new ErrorDto(statusCode, messages, uri, timestamp);
+        ErrorDto response = new ErrorDto(statusCode, messages, uri, timestamp.toString());
 
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
@@ -36,7 +36,7 @@ public class ControllerExceptionAdvice extends RuntimeException {
         String error = HttpStatus.BAD_REQUEST.getReasonPhrase();
         String message = ex.getMessage();
 
-        ErrorDto response = new ErrorDto(statusCode,message,uri,timestamp);
+        ErrorDto response = new ErrorDto(statusCode,message,uri,timestamp.toString());
 
         return ResponseEntity.badRequest().body(response);
     }
