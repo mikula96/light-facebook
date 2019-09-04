@@ -10,16 +10,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin
 public class UserController {
     @Autowired
     private UserService userService;
     @Autowired
     private PostService postService;
-
 
     @PostMapping
     public User create(@RequestBody User user) {
