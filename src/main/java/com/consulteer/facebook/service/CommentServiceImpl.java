@@ -7,8 +7,6 @@ import com.consulteer.facebook.repository.CommentRepository;
 import com.consulteer.facebook.repository.PostRepository;
 import com.consulteer.facebook.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

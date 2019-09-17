@@ -35,6 +35,11 @@ public class UserController {
         return new ResponseEntity<>(optionalUser.get(), HttpStatus.OK);
     }
 
+    @PostMapping(value = "/home")
+    public String home(){
+        return "Home page";
+    }
+
     @PostMapping("/{userId}/posts")
     public ResponseEntity<Post> addPost(@PathVariable("userId") Long userId, @RequestBody Post post) {
         Post result = postService.create(userId, post);
