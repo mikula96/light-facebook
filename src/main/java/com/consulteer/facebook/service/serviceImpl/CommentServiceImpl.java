@@ -1,4 +1,4 @@
-package com.consulteer.facebook.service;
+package com.consulteer.facebook.service.serviceImpl;
 
 import com.consulteer.facebook.entity.Comment;
 import com.consulteer.facebook.entity.Post;
@@ -6,6 +6,7 @@ import com.consulteer.facebook.entity.User;
 import com.consulteer.facebook.repository.CommentRepository;
 import com.consulteer.facebook.repository.PostRepository;
 import com.consulteer.facebook.repository.UserRepository;
+import com.consulteer.facebook.service.services.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
 package com.consulteer.facebook.controller;
 
 import com.consulteer.facebook.entity.Post;
-import com.consulteer.facebook.service.PostService;
-import com.consulteer.facebook.service.UserService;
+import com.consulteer.facebook.service.services.PostService;
+import com.consulteer.facebook.service.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;

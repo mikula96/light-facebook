@@ -1,4 +1,4 @@
-package com.consulteer.facebook.service;
+package com.consulteer.facebook.service.services;
 
 import com.consulteer.facebook.entity.Post;
 

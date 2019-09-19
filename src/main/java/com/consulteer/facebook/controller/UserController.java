@@ -2,8 +2,8 @@ package com.consulteer.facebook.controller;
 
 import com.consulteer.facebook.entity.Post;
 import com.consulteer.facebook.entity.User;
-import com.consulteer.facebook.service.PostService;
-import com.consulteer.facebook.service.UserService;
+import com.consulteer.facebook.service.services.PostService;
+import com.consulteer.facebook.service.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -20,7 +20,6 @@ public class UserController {
     @Autowired
     private PostService postService;
 
-
     @PostMapping
     public User create(@RequestBody User user) {
         return userService.create(user);
@@ -33,11 +32,6 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(optionalUser.get(), HttpStatus.OK);
-    }
-
-    @PostMapping(value = "/home")
-    public String home(){
-        return "Home page";
     }
 
     @PostMapping("/{userId}/posts")

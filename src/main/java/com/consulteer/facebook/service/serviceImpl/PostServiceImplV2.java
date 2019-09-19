@@ -1,7 +1,8 @@
-package com.consulteer.facebook.service;
+package com.consulteer.facebook.service.serviceImpl;
 
 import com.consulteer.facebook.entity.Post;
 import com.consulteer.facebook.repository.PostRepository;
+import com.consulteer.facebook.service.services.PostServiceV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
