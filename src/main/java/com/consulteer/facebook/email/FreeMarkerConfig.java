@@ -1,3 +1,4 @@
+/*
 package com.consulteer.facebook.email;
 
 import org.springframework.context.annotation.Bean;
@@ -15,3 +16,4 @@ public class FreeMarkerConfig {
         return bean;
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.consulteer.facebook.email;
 
 import com.consulteer.facebook.entity.User;
@@ -13,9 +14,11 @@ import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.util.Objects;
 
+*/
 /**
  * Created by Milos Stambolija on 16.9.2019.
- **/
+ **//*
+
 @Service
 public class NotificationModel {
 
@@ -53,3 +56,4 @@ public class NotificationModel {
     }
 
 }
+*/

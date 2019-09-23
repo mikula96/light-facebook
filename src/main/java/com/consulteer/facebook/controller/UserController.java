@@ -1,5 +1,6 @@
 package com.consulteer.facebook.controller;
 
+import com.consulteer.facebook.RestClient;
 import com.consulteer.facebook.entity.Post;
 import com.consulteer.facebook.entity.User;
 import com.consulteer.facebook.service.services.PostService;
@@ -9,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
 
@@ -19,6 +21,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private PostService postService;
+    @Autowired
+    private RestClient restClient;
 
     @PostMapping
     public User create(@RequestBody User user) {
@@ -31,7 +35,14 @@ public class UserController {
         if (optionalUser.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
         return new ResponseEntity<>(optionalUser.get(), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/requestResponse")
+    public ResponseEntity<String> getall() {
+        RestTemplate restTemplate = new RestTemplate();
+        return new ResponseEntity<String>(restTemplate.getForEntity("https://api.chucknorris.io/jokes/random", String.class));
     }
 
     @PostMapping("/{userId}/posts")

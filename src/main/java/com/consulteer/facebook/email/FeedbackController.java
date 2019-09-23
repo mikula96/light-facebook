@@ -1,3 +1,4 @@
+/*
 package com.consulteer.facebook.email;
 
 import com.consulteer.facebook.entity.User;
@@ -10,9 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.mail.MessagingException;
 import java.io.IOException;
 
+*/
 /**
  * Created by Milos Stambolija on 16.9.2019.
- **/
+ **//*
+
 @RestController
 @RequestMapping(value = "/feedback")
 public class FeedbackController {
@@ -49,3 +52,4 @@ public class FeedbackController {
     }
 
 }
+*/
